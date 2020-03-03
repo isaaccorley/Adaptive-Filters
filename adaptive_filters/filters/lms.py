@@ -13,7 +13,7 @@ class LMSFilter(AdaptiveFilter):
         # Compute error
         ei = yi - yi_hat
 
-        # Compute gradient
+        # Compute gradient dw = mu * e(k) * x(k)
         dw = self.mu * ei * xi
 
         # Update weights

@@ -8,13 +8,14 @@ class AdaptiveFilter(object):
         self,
         n=4,
         mu=1E-2,
+        eps=0.1,
         w="random",
-        sigma=0.5
+        sigma=0.5,
     ):
         self.n = n
         self.mu = mu
+        self.eps = eps
         self.w = self.init_weights(w, sigma)
-
 
     def init_weights(self, w, sigma=0.5):
         """ Initialize filter coefficients """
@@ -49,3 +50,7 @@ class AdaptiveFilter(object):
             y_hat[i], e[i], self.w = self.step(x[i], y[i], self.w)
 
         return y_hat, e, self.w
+
+    def step(self, xi, yi, w):
+        """ Perform a single step to update weights """
+        raise NotImplementedError

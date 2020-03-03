@@ -31,7 +31,6 @@ class WienerFilter(AdaptiveFilter):
         # Compute error
         ei = yi - yi_hat
 
-        # Wiener filter doesn't use weights
         w = None
 
         return yi_hat, ei, w
