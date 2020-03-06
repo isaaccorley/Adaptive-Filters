@@ -44,7 +44,7 @@ class AdaptiveFilter(object):
         N = x.shape[0]
         y_hat, e = np.zeros(N), np.zeros(N)
 
-        print("Fitting LMS Filter")
+        print("Fitting Filter")
         for i in tqdm(range(N)):
             # Perform an update step
             y_hat[i], e[i], self.w = self.step(x[i], y[i], self.w)
